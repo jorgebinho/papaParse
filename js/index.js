@@ -1,3 +1,4 @@
+let table = document.getElementById('tbl-data');
 let btn_upload = document.getElementById('btn-upload-csv').addEventListener('click', ()=> {
     Papa.parse(document.getElementById('upload-csv').files[0], {
         download: true,
@@ -6,10 +7,8 @@ let btn_upload = document.getElementById('btn-upload-csv').addEventListener('cli
             let i = 0;
             results.data.map((data, index)=> {
                 if(i === 0){
-                    let table = document.getElementById('tbl-data');
                     generateTableHead(table, data);
                 } else {
-                    let table = document.getElementById('tbl-data');
                     generateTableRows(table, data)   
                 }
                 i++;
